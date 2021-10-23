@@ -1,0 +1,22 @@
+Plastic Bag: Trash
+Paper: Recycle
+Cardboard: Recycle
+Napkin: Compost
+Fruit: Compost
+Clothing: Trash
+Flower: Compost
+Chip Bag: Trash
+Metal Can: Recycle
+Styrofoam: Trash
+Rubber: Trash
+Eggs: Compost
+Coffee Grinds: Compost
+Glass: Recycle
+Meat: Trash
+Vegetable: Compost
+Newspaper: Recycle
+Plastic: Trash
+Magazine: Recycle
+Candy Wrapper: Trash
+Aluminum Foil: Recycle
+Tea Bag: Compost
