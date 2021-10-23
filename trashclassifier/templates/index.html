@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+		<title>Oscar the Trash Sorter</title>
+		<style type = "text/css">
+
+
+		</style>
+	<script>
+
+		function sendData()
+		{
+			var message = document.getElementById('message').value;
+			document.getElementById('message').value = ""
+			var data = new FormData()
+			data.append("input", message)
+			const request = new XMLHttpRequest();
+            request.open('POST', `/send`, true);
+			request.onload = () => {
+				const response = request.responseText;
+				document.getElementById('message-container').innerHTML = "Your trash is: " + response;
+			};
+			request.send(data)
+		}
+		window.addEventListener('load', function () {
+			document.getElementById('send-message').onkeydown = function(e){
+					   if(e.keyCode == 13){
+						 sendData();
+					   }
+					};
+			document.getElementById('message').onkeydown = function(e){
+			   if(e.keyCode == 13){
+				   sendData();
+			   }
+			};
+		})
+
+
+	</script>
+	</head>
+<body class="h-100 text-center bg-dark vsc-initialized">
+	<div class="text-center text-white d-flex rounded flex-column bg_img h-100">
+
+		<div class="my-auto mx-auto">
+		<h1 class="p-4 mx-auto text-white shadow">Oscar the Trash Sorter</h1>
+      	<p class="lead fw-normal solid mx-5 my-4 shadow">Categorizes trash into Compost, Recycle, or Incinerate</p>
+			<div class="w-75 text-center align-content-center mx-auto">
+				<input class="w-100 bg-dark1 text-center inp rounded-pill py-3 text-white" type="text" placeholder="Trash item" name="message" id="message">
+				<button class="btn btn-primary px-auto px-4 display-6 py-1 my-3" style="background-color:#3DA34C" id="send-message" onclick="sendData()"> Classify</button>
+				<p class="lead text-white px-3 py-2 messagebox rounded-pill" id="message-container">Your trash is: </p>
+			</div>
+		</div>
+
+		</div>
+
+	</div>
+
+
+
+</body></html>

@@ -1,0 +1,37 @@
+@font-face{
+            font-family: roboto;
+    			src: url('Roboto-Light.ttf');
+			}
+			h1,h2,h3,h4,h5,h6{
+				font-family: roboto;
+			}
+			p{
+				font-family: roboto;
+			}
+			.messagebox{
+				background-color:#171A1D;
+			}
+			.bg-dark1{
+				background-color:#111315;
+			}
+			.overlay{
+				background-color:rgba(4,6,7,0.87);
+				z-index: 1;
+			}
+			.solid{
+				opacity: 1 !important;
+			}
+			.inp{
+				border: none;
+			}
+			.clean{
+				font-family:roboto;
+			}
+			.shadow{
+			  text-shadow: 2px 2px 10px #000000;
+
+			}
+			#message-container{
+				line-height: 2em;
+				text-align: left;
+			}
