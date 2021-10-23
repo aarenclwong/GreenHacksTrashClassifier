@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="text-center text-white d-flex rounded flex-column bg_img h-100 ">
+
+		<div class="my-auto mx-auto">
+			<h1 class="mx-auto text-white shadow">Oscar the Trash Sorter</h1>
+
+			<form method="post" action="{{ url_for('tasks') }}">
+			<input class="btn btn-primary px-auto px-4 display-6 py-1 my-3" style="background-color:#3DA34C" type="submit" value="Stop/Start" name="stop" />
+			<input class="btn btn-primary px-auto px-4 display-6 py-1 my-3" style="background-color:#3DA34C" type="submit" value="Capture" name="click"/>
+			</form>
+            <img src="{{ url_for('video_feed') }}" height="80%">
+			<h3 style="font-family:roboto;">Classification: {{img_pred}}</h3>
+
+
+    </div>
+</div>
+
+{% endblock %}
